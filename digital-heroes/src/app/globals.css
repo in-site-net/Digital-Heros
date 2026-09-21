@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #0E1512;
+  color: #F4F1E8;
+}
+
+::selection {
+  background-color: #D9A441;
+  color: #0E1512;
+}
+
+.btn-primary {
+  @apply inline-flex items-center justify-center gap-2 rounded-md bg-brass px-6 py-3 font-semibold text-ink transition-transform duration-150 hover:scale-[1.02] hover:bg-[#e6b356] active:scale-[0.99];
+}
+
+.btn-secondary {
+  @apply inline-flex items-center justify-center gap-2 rounded-md border border-line px-6 py-3 font-semibold text-parchment transition-colors duration-150 hover:border-brass hover:text-brass;
+}
+
+.card {
+  @apply rounded-md border border-line bg-surface p-6;
+}
+
+.input {
+  @apply w-full rounded-sm border border-line bg-surface2 px-4 py-2.5 text-parchment placeholder:text-muted focus:border-brass focus:outline-none focus:ring-1 focus:ring-brass;
+}
+
+.label {
+  @apply mb-1.5 block text-sm text-muted;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
