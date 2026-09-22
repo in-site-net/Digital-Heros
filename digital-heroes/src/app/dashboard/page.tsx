@@ -1,5 +1,6 @@
 import { redirect } from "next/navigation";
 import Nav from "@/components/Nav";
+import LogoutButton from "@/components/LogoutButton";
 import { createClient } from "@/lib/supabase/server";
 import ScorePanel from "./ScorePanel";
 import CharityPanel from "./CharityPanel";
@@ -27,9 +28,12 @@ export default async function DashboardPage() {
     <div className="min-h-screen">
       <Nav session={session} />
       <div className="mx-auto max-w-5xl px-6 py-12">
-        <h1 className="font-display text-3xl text-parchment">
-          Hi{profile?.full_name ? `, ${profile.full_name.split(" ")[0]}` : ""}.
-        </h1>
+        <div className="flex items-center justify-between">
+          <h1 className="font-display text-3xl text-parchment">
+            Hi{profile?.full_name ? `, ${profile.full_name.split(" ")[0]}` : ""}.
+          </h1>
+          <LogoutButton />
+        </div>
 
         {/* Subscription status */}
         <div className="mt-6 card flex flex-wrap items-center justify-between gap-4">
