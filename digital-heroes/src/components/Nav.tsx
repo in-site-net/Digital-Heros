@@ -1,4 +1,5 @@
 import Link from "next/link";
+import LogoutButton from "./LogoutButton";
 
 export default function Nav({ session }: { session: { isSubscriber: boolean; isAdmin: boolean } | null }) {
   return (
@@ -14,7 +15,10 @@ export default function Nav({ session }: { session: { isSubscriber: boolean; isA
             <Link href="/admin" className="hover:text-parchment">Admin</Link>
           )}
           {session ? (
-            <Link href="/dashboard" className="hover:text-parchment">Dashboard</Link>
+            <>
+              <Link href="/dashboard" className="hover:text-parchment">Dashboard</Link>
+              <LogoutButton />
+            </>
           ) : (
             <Link href="/login" className="hover:text-parchment">Log in</Link>
           )}
